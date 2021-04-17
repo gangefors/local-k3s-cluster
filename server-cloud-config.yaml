@@ -1,0 +1,32 @@
+#cloud-config
+byobu_by_default: system
+package_upgrade: true
+
+apt:
+  sources:
+    docker.list:
+      source: "deb [arch=amd64] https://download.docker.com/linux/ubuntu $RELEASE stable"
+      keyid: 0EBFCD88
+
+packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+
+write_files:
+- content: |2
+    {
+      "log-driver": "json-file",
+      "log-opts": {
+        "max-size": "100m"
+      },
+      "storage-driver": "overlay2"
+    }
+  path: /etc/docker/daemon.json
+  permissions: '0644'
+
+runcmd:
+  - [ swapoff, -a ]
+  - [ systemctl, enable, docker ]
+  - [ systemctl, restart, docker ]
+  - "curl -sfL https://get.k3s.io | sh -s - --docker"
