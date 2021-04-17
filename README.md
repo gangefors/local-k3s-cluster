@@ -89,6 +89,6 @@ Then just start over from the creation of the node.
 
 ## References
 
-https://multipass.run/
-https://cloudinit.readthedocs.io/en/latest/
-https://rancher.com/docs/k3s/latest/en/
+- https://multipass.run/
+- https://cloudinit.readthedocs.io/en/latest/
+- https://rancher.com/docs/k3s/latest/en/
