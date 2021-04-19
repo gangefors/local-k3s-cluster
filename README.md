@@ -11,12 +11,12 @@ Ubuntu with `multipass` and `jq` installed.
 
 ## Create the cluster nodes
 
-Create 4 VMs with multipass using the following commands.
+Create at least 2 VMs with multipass using the following commands.
 
 	multipass launch --cpus 2 --mem 2G --disk 10G --cloud-init server-cloud-config.yaml --name server-node &
 	multipass launch --cpus 2 --mem 2G --disk 10G --cloud-init agent-cloud-config.yaml --name agent-node1 &
-	multipass launch --cpus 2 --mem 2G --disk 10G --cloud-init agent-cloud-config.yaml --name agent-node2 &
-	multipass launch --cpus 2 --mem 2G --disk 10G --cloud-init agent-cloud-config.yaml --name agent-node3 &
+	...
+	multipass launch --cpus 2 --mem 2G --disk 10G --cloud-init agent-cloud-config.yaml --name agent-node9 &
 
 > You may change the options to better fit your host system and use case.
 > Remove the `&` if you don't want to run them in parallel.
