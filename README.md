@@ -41,8 +41,8 @@ manually install k3s on them.
 2. Copy this file to the agent nodes.
 
 		multipass transfer env agent-node1:env
-		multipass transfer env agent-node2:env
-		multipass transfer env agent-node3:env
+		...
+		multipass transfer env agent-node9:env
 		rm env
 
 3. Now we need to open a shell to the node itself.
@@ -71,7 +71,7 @@ the cluster.
 	server-node   Ready    control-plane,master   2m16s   v1.20.5+k3s1
 	agent-node1   Ready    <none>                 97s     v1.20.5+k3s1
 	agent-node2   Ready    <none>                 57s     v1.20.5+k3s1
-	agent-node3   Ready    <none>                 23s     v1.20.5+k3s1
+	...
 
 If all nodes have status `Ready` all is well.
 
